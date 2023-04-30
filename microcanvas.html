@@ -1,0 +1,72 @@
+
+<html>
+
+<head>
+</head>
+
+<body>
+<canvas id="myCanvas" width="320" height="240"  style="border:1px solid #000000;" />
+
+ <script>
+  var canvas=document.getElementById("myCanvas");
+      canvas.style.width = '640px'; canvas.style.height = '480px';
+  var ctx = canvas.getContext("2d");
+  var load = 1; var firstRun = 1; var vecKey = [];
+  var key_left = 37;    var key_up = 38;    var key_right = 39;    var key_down = 40;
+  var key_w = 87; var key_a = 65;var key_s = 83;var key_d = 68;var key_m = 77;
+  var key_n = 78;var key_x = 88; var key_y = 89;var key_z = 90;
+  var keyUp = false;  var keyDown = false;  var keyLeft = false;  var keyRight = false;
+  var keyFire = false;  var keyFire2 = false;
+  function isKdown(k) { return vecKey[k] == 1; }
+  var gt = 0;  
+  /*
+   load=0;
+    var img = new Image();
+      img.src = "ascii2.png"; 
+      img.onload = function()  { load+=1; }
+    */
+  
+  function init()
+  {   
+    document.addEventListener('keydown', function(event) { event.preventDefault(); vecKey[event.keyCode] = 1; }, true);
+    document.addEventListener('keyup', function(event) { event.preventDefault();  vecKey[event.keyCode] = 0; }, true);
+  }//init
+  
+  var cx = 160; var cy = 120;
+  
+  function mainLoop()
+    {
+     if (load < 1) {  setTimeout(mainLoop, 100); return; }
+     if (firstRun==1){ firstRun = 0; init(); }
+       keyUp = (isKdown(key_w) || isKdown(key_up));
+       keyDown = (isKdown(key_s) || isKdown(key_down));
+       keyLeft = (isKdown(key_a) || isKdown(key_left));
+       keyRight = (isKdown(key_d) || isKdown(key_right));
+       keyFire = (isKdown(key_n) || isKdown(key_z)||isKdown(key_y) );
+       keyFire2 = (isKdown(key_m) || isKdown(key_x) );
+       
+       var ms; ms = 4;
+       if (keyUp) { cy-= ms; }
+       if (keyDown) { cy+= ms; }
+       if (keyLeft) {  cx-= ms; }
+       if (keyRight) { cx+= ms; }
+       
+       ctx.save();
+         ctx.fillStyle="#000000";
+         ctx.fillRect(0,0, canvas.width, canvas.height);  
+         ctx.fillStyle="#ffFFff";         
+         ctx.fillRect(cx-8,cy-8, 16,16);
+       ctx.restore();
+      gt += 1;  
+      setTimeout(mainLoop, 1000 / 60);
+    }//mainLoop
+
+   
+    mainLoop();
+</script>
+
+
+</body>
+
+
+</html>

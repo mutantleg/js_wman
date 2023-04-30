@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<texture width="128" height="128" name="wman.png">
+  <image  x="1" y="1" width="24" height="16" name="wclimb0" />
+  <image  x="27" y="1" width="24" height="16" name="wclimb1" />
+  <image  x="53" y="1" width="24" height="16" name="wclimb2" />
+  <image  x="79" y="1" width="24" height="16" name="wclimb3" />
+  <image  x="105" y="1" width="16" height="16" name="wdoub0" />
+  <image  x="1" y="19" width="16" height="16" name="wdoub1" />
+  <image  x="1" y="37" width="16" height="16" name="wdoub2" />
+  <image  x="1" y="55" width="16" height="16" name="wdoub3" />
+  <image  x="19" y="19" width="24" height="16" name="wman0" />
+  <image  x="45" y="19" width="24" height="16" name="wman1" />
+  <image  x="71" y="19" width="24" height="16" name="wman2" />
+  <image  x="97" y="19" width="24" height="16" name="wman3" />
+  <image  x="19" y="37" width="24" height="16" name="wman4" />
+  <image  x="19" y="55" width="24" height="16" name="wman5" />
+  <image  x="19" y="73" width="24" height="16" name="wman6" />
+  <image  x="19" y="91" width="24" height="16" name="wman7" />
+  <image  x="19" y="109" width="24" height="16" name="wmanx" />
+</texture>
